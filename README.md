@@ -7,16 +7,16 @@ The program encrypts an audio signal in such a way that it can effectively pass 
 
 # Code description
 ## getkeys.m
-    Generating encryption and decryption keys to shift phases, using random number generator. For randomizing uses 'twister' algorithm (you can check MATLAB documentation). 
-    Function generate two keys, second one is flipped complex conjugate of the first one, due to Fourier symmetry.
-    Decryption keys are complex conjugates of encryption keys. 
+Generating encryption and decryption keys to shift phases, using random number generator. For randomizing uses 'twister' algorithm (you can check MATLAB documentation). 
+Function generate two keys, second one is flipped complex conjugate of the first one, due to Fourier symmetry.
+Decryption keys are complex conjugates of encryption keys. 
 ## encrypt.m
-    function that shifts phases based on two keys for the symmetric halves of the Fourier transform
+function that shifts phases based on two keys for the symmetric halves of the Fourier transform
 ## decrypt.m
-    same but using decryption keys
+same but using decryption keys
 ## main_encrypting.m
-    Encrypts recorded .wav audio and saves output. After encrypting you can pass .wav through AMR codec and then decrypt using main_decrypting.m.
+Encrypts recorded .wav audio and saves output. After encrypting you can pass .wav through AMR codec and then decrypt using main_decrypting.m.
 ## main_decrypting.m
-    Decrypts encrypted file. You can play around with denoising.
+Decrypts encrypted file. You can play around with denoising.
 
 Final files are saved in .wav, MATLAB doesn't support amr.
